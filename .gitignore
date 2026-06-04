@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.log
+.env
+.env.local
+.DS_Store
+
+# harness state — keep memory only
+.harness/intake/
+.harness/active/
+.harness/archive/
+!.harness/memory/

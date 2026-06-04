@@ -1,0 +1,9 @@
+# Paths agents must not write to. One substring per line.
+# Enforced by scripts/deny-paths-gate.sh via Claude Code PreToolUse hook.
+.claude/agents/
+.claude/settings.json
+scripts/deny-paths-gate.sh
+.harness/memory/policy/
+.harness/memory/views/
+package.json
+pnpm-lock.yaml

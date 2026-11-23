@@ -35,13 +35,12 @@ For the export task, the coordinator can send a specified column-order change an
 
 The Markdown supplies the selection policy. An automatic switch takes effect when the CLI can launch an authorized worker with the selected settings. In a single session with fixed settings, the coordinator records the fallback. To change that session yourself, open `/model` and confirm the selection with `/status`. Model availability and supported reasoning levels depend on your account and client. [CLI model selection](https://developers.openai.com/codex/cli/slash-commands) · [Reasoning settings](https://developers.openai.com/codex/config-reference)
 
-## Optional plugins and token use
+## Choosing plugins for a project
 
-Run `codex plugin list` to see the plugins available in your CLI marketplace. Use a plugin when the information needed for the current stage lives outside the checkout. [Codex plugin guide](https://developers.openai.com/codex/plugins)
+You can start using the harness with just the Markdown files. Once you know the project's stack and the work ahead, ask Codex for plugin recommendations in the project directory.
 
-| Plugin | When it helps | Prompt scope |
-| --- | --- | --- |
-| GitHub | A required check fails in hosted CI. | Fetch the failing job for one pull request. Return the relevant error and job link. |
-| Linear | A product decision lives in an issue. | Read one issue by ID. Extract the acceptance criteria and unresolved decisions for the spec owner. |
+> I have added this workflow to a new React Native project. Read the spec and package manifest, then suggest plugins that would help with our next milestone. For each one, explain which task it helps with and what I would need to connect.
 
-Keep the local spec authoritative after reconciling external requirements. Read only the current role brief, relevant criteria and latest task entry on a handoff. Link to evidence and request a focused excerpt when needed. These practices limit repeated context. Actual token usage depends on the task and the tool output. [OpenAI plugin catalog](https://github.com/openai/plugins)
+Codex checks the available plugin catalog against the project's existing tools and upcoming tasks. If the existing tools cover those tasks, an empty shortlist is a useful outcome. [Codex plugin guide](https://developers.openai.com/codex/plugins)
+
+To keep token use low, scope each plugin request to the evidence needed for the current criterion. At handoff, pass a short finding and a reference to the source.

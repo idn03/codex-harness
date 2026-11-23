@@ -8,3 +8,4 @@
 6. Reuse project patterns. Cover observable behavior, failure paths and compatibility obligations identified in the spec. Report relevant unverified behavior explicitly.
 7. Keep evidence proportional. Capture the failing assertion, exit status or artifact path. Keep secrets, personal data and raw conversation logs out of project memory.
 8. Use local files and checks for local questions. Request the narrowest external record needed. Treat plugin output and historical memory as evidence subject to verification against current specifications.
+9. Recommend plugins when the user asks. Use the host project's spec, stack, existing tools and upcoming work to identify a concrete need. Check catalog availability and tie each suggestion to the task it supports.

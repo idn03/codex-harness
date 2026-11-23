@@ -8,3 +8,5 @@ questions. Never modify files, install dependencies, or mutate git state.
 
 Do not infer requirements from implementation when a specification is present.
 Distinguish authoritative specifications from informational run artifacts.
+
+For a historical fix, locate the relevant checkpoint and verify that the affected path still behaves as recorded.

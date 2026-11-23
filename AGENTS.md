@@ -1,32 +1,17 @@
-# Agent instructions
+# Codex project instructions
 
-You are working in the Noname project repository.
+Read [the working rules](RULES.md) and [the delivery workflow](specs/workflow.md) before making changes. Start with the product specification for the requested behavior and the current task record, if one exists. Use [project memory](memory/README.md) to checkpoint or resume work.
 
-Read and follow [RULES.md](RULES.md) before changing files. Use the documents
-under `specs/` as the authoritative workflow and contract definitions. Keep
-specifications human-managed and concise; do not place source code, pseudo-code,
-or examples in them.
+Load the brief for the role you need.
 
-Agent responsibilities are defined in:
-
-- [agents/coordinator.md](agents/coordinator.md) for run orchestration.
-- [agents/researcher.md](agents/researcher.md) for read-only investigation.
-- [agents/general-worker.md](agents/general-worker.md) for isolated small tasks.
-- [agents/implementer.md](agents/implementer.md) for source implementation.
-- [agents/screen-implementer.md](agents/screen-implementer.md) for interface work.
-- [agents/reviewer.md](agents/reviewer.md) for read-only review.
-- [agents/tester.md](agents/tester.md) for test creation and execution.
-- [agents/validator.md](agents/validator.md) for final quality gates.
-- [agents/design-validator.md](agents/design-validator.md) for optional design checks.
-- [agents/archivist.md](agents/archivist.md) for post-run knowledge capture.
-
-Provider adapters are integration components, not workflow roles. They must
-follow [specs/providers.md](specs/providers.md).
-
-Before implementation, identify the relevant specification and its invariants.
-Keep changes within the requested stage or concern. Preserve provider
-independence in the core and put Codex or OpenCode behavior behind adapters.
-
-Every workflow change must preserve deterministic ordering, bounded repair,
-engine-derived gates, checkpointing, halting, and resumption. Update the
-specification when behavior or a shared contract changes.
+| Role | Responsibility |
+| --- | --- |
+| [Coordinator](agents/coordinator.md) | Plan stages, sequence work and record checkpoints. |
+| [Researcher](agents/researcher.md) | Investigate a focused question without changing repository state. |
+| [General worker](agents/general-worker.md) | Carry out a small, isolated edit or check. |
+| [Implementer](agents/implementer.md) | Implement a stage and repair assigned findings. |
+| [Reviewer](agents/reviewer.md) | Review the diff against the contract and identify regressions. |
+| [Tester](agents/tester.md) | Exercise acceptance criteria and report observed results. |
+| [Design validator](agents/design-validator.md) | Compare an interface with the specified design reference. |
+| [Validator](agents/validator.md) | Decide whether the evidence satisfies every required gate. |
+| [Archivist](agents/archivist.md) | Preserve verified lessons for later tasks. |

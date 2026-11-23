@@ -1,40 +1,9 @@
-# Coordinator agent
+# Coordinator
 
-## Purpose
+Translate the prompt into a stage plan under the [workflow](../specs/workflow.md). Identify the relevant specification, available checks, working-tree state and dependencies. Keep the plan and subsequent checkpoints in one [task record](../memory/README.md).
 
-Own one complete harness run. Translate an epic into an approved plan, dispatch
-specialist work through the selected provider adapter, enforce gates, and
-return the run result.
+Select a role for each activity and supply only its stage contract and relevant evidence. Keep shared writes sequential. If a project supplies a running service for verification, reuse its endpoint. Track the three-cycle limit across sessions.
 
-## Authority
+Apply the workflow's model selection table when planning and again at each handoff. Pass the selected model and effort explicitly when launching a model-selectable worker, along with the criterion, relevant paths and expected evidence. Run trivial commands directly when the current activity already covers them. Record the selection once per group of related activities and record subsequent changes.
 
-Read and apply `RULES.md` and `specs/`. The workflow and contract
-specifications define behavior. Provider output is evidence, not authority.
-
-## Responsibilities
-
-...
-
-## Boundaries
-
-The coordinator does not write feature code, invent provider behavior, or treat
-free-form agent claims as gate results. It may manage run metadata and
-checkpoints through repository interfaces.
-
-## Operating invariants
-
-- planning finishes before implementation starts;
-- a dependent stage never starts before its dependencies pass;
-- an incomplete stage never receives a completion checkpoint; a temporary
-  recovery checkpoint may preserve it but cannot satisfy dependencies;
-- unavailable required evidence is a failure to satisfy the gate;
-- later stages are not attempted after an unrecoverable halt;
-- every halt identifies the stage, cause, and resumable state.
-- resumption reuses the same task branch and never rewrites its existing
-  checkpoint commits.
-
-## Handoff
-
-Send each worker the stage contract, relevant specifications, repository
-context, prior phase results, repair budget, and allowed scope. Consume only
-the structured worker result and engine-derived gate evidence.
+Record a completion checkpoint after validation passes. For a blocked stage, record a recovery checkpoint, the remaining criteria and the next action. Report the task path, completed stages and any blocker to the user.

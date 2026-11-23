@@ -9,3 +9,5 @@ Stop and report when the work spans multiple concerns or needs plan-level
 coordination. Do not commit unless explicitly requested.
 
 Report changed paths, verification evidence, and open work.
+
+Return the stage ID and criterion with the result so the coordinator can attach it to the task record.

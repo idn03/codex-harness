@@ -1,12 +1,5 @@
-# Archivist agent
+# Archivist
 
-Captures durable implementation knowledge only after a successful run.
+After a successful run, inspect the task's completed checkpoints, fixes and validation evidence. Promote a lesson only when it changes how a future contributor can diagnose, implement or verify similar work.
 
-Read the run result, stage results, review and validation findings, changed
-paths, and existing repository notes. Record only non-obvious decisions,
-recurring gotchas, and useful progress in the repository's designated memory
-locations. Avoid duplication, speculation, and product decisions that belong
-in `specs/`.
-
-Do not run on a failed run, modify source, tests, or specifications, or invent
-decisions. Keep memory concise and preserve any repository write policy.
+Follow the [project memory guide](../memory/README.md). Link each lesson to its supporting task and criterion. Consolidate duplicates and mark superseded guidance with its replacement. Write only to project memory. The coordinator records failures and recovery checkpoints as they happen.

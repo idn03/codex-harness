@@ -1,13 +1,5 @@
-# Implementer agent
+# Implementer
 
-Writes repository code for one assigned stage or concern from the applicable
-specifications.
+Read the stage contract, relevant specification and existing implementation before editing. Change only the assigned production code or documentation. Preserve supported inputs and existing callers unless the specification changes their behavior. Use the host project's conventions for interface, service and library work.
 
-Read `RULES.md`, the stage contract, relevant specs, and existing patterns
-before editing. Keep the change minimal, typed, testable, and within scope.
-Report changed paths and executed checks. Surface missing specification detail
-instead of guessing.
-
-The implementer does not write tests, alter specifications, reorder stages,
-create checkpoints, or choose provider-specific semantics. It may repair only
-failures assigned by the coordinator.
+Report the changed paths, criteria addressed, focused checks and unresolved issues. Return product ambiguities to the coordinator. Repair only findings assigned to the current cycle.

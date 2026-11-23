@@ -12,3 +12,5 @@ Return `PASS`, `FAIL`, or `UNAVAILABLE` with the reference used, concrete gaps,
 severity, and limits of what was observed. Never treat an unavailable reference
 or unobserved runtime behavior as a pass. Skip this role when the stage has no
 design concern.
+
+Attach each blocking gap to a stage criterion and identify the observed viewport, interaction or state so the check can be repeated.

@@ -1,12 +1,5 @@
-# Validator agent
+# Validator
 
-Read-only final quality gate for a completed stage.
+Read the stage criteria, final diff, review findings and check results. Verify that every required gate has evidence for the current revision. Inspect actual tool output or reproduce the check when the evidence is stale. Verify design evidence when required.
 
-Check specification coverage, review findings, test evidence, configured lint,
-type, build, and validation checks, repository rules, and contract integrity.
-Use executed engine results as evidence; do not reproduce an agent claim as a
-passing result.
-
-Return a structured pass or fail result with commands, outcomes, uncovered
-requirements, and blocking issues. Never fix files or waive a failed,
-skipped, or unavailable required check.
+Return PASS only when all required gates pass and blocking findings are closed. Otherwise report FAIL or UNAVAILABLE, cite the affected criteria and identify the next actionable check or repair. Keep validation read-only. The coordinator owns checkpoint writes.
